@@ -30,8 +30,8 @@ public class HelloController {
     private int num2;
     private String operacion;
 
-    private String[] datos = {String.valueOf(num1),operacion, String.valueOf(num2)};
-
+    //private String[] datos = {String.valueOf(num1),operacion, String.valueOf(num2)};
+    String operacion="";
 
 
     @FXML

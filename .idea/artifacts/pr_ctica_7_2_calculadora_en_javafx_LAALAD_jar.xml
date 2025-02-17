@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pr-ctica-7-2-calculadora-en-javafx-LAALAD:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pr_ctica_7_2_calculadora_en_javafx_LAALAD_jar</output-path>
+    <root id="archive" name="pr-ctica-7-2-calculadora-en-javafx-LAALAD.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
