@@ -21,17 +21,13 @@ public class HelloController {
     private static int siete=7;
     private static int ocho=8;
     private static int nueve=9;
-    private static String sumar = "sumar";
-    private static String restar = "restar";
-    private static String multiplicar = "multiplicar";
-    private static String dividir = "dividir";
+    private static String sumar = "+";
+    private static String restar = "-";
+    private static String multiplicar = "*";
+    private static String dividir = "/";
 
-    private int num1;
-    private int num2;
-    private String operacion;
 
-    //private String[] datos = {String.valueOf(num1),operacion, String.valueOf(num2)};
-    String operacion="";
+    //private String[] datos = {String.valueOf(num1),operacion, String.valueOf(num2)}
 
 
     @FXML
@@ -51,15 +47,19 @@ public class HelloController {
 
     public void onClickSumar(ActionEvent actionEvent) {
         operacion = sumar;
+
     }
 
     public void onClickRestar(ActionEvent actionEvent) {
+        operacion=restar;
     }
 
     public void onClickMultiplicar(ActionEvent actionEvent) {
+        operacion = multiplicar;
     }
 
     public void onClickDividir(ActionEvent actionEvent) {
+        operacion = dividir;
     }
 
     public void onClickCero(ActionEvent actionEvent) {
