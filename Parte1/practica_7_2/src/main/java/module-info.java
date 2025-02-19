@@ -4,6 +4,6 @@ module com.example.practica_7_2 {
 
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.example.practica_7_2 to javafx.fxml;
-    exports com.example.practica_7_2;
+    opens com.example.practica_7_2.Controlador to javafx.fxml;
+    exports com.example.practica_7_2.Controlador;
 }

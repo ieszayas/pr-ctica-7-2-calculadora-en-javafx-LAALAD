@@ -7,12 +7,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.practica_7_2.HelloController">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practica_7_2.Controlador.ControladorCalculadora">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
+         <Label fx:id="pantalla_small" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="63.0" prefWidth="340.0" text="a">
+            <font>
+               <Font name="Comic Sans MS Bold" size="35.0" />
+            </font>
+         </Label>
          <Label fx:id="pantalla" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="206.0" prefWidth="340.0" text="a">
             <font>
                <Font name="Comic Sans MS Bold" size="35.0" />
@@ -22,6 +27,39 @@
    </VBox>
    <VBox prefHeight="340.0" prefWidth="340.0">
       <children>
+         <HBox alignment="CENTER" minHeight="75.0" minWidth="200.0" spacing="20.0">
+            <children>
+               <Button fx:id="mc" minWidth="60.0" onAction="#onClickMC" text="MC">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="mr" minWidth="60.0" onAction="#onClickMR" text="MR">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="m_plus" minWidth="60.0" onAction="#onClickM_plus" text="M+">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="m_plus1" minWidth="60.0" onAction="#onClickParentesis" text="( )">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
          <HBox alignment="CENTER" minHeight="75.0" minWidth="200.0" spacing="20.0">
             <children>
                <Button fx:id="resetear" minWidth="60.0" onAction="#onClickResetear" text="C">
@@ -40,7 +78,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="porcentaje" minWidth="60.0" onAction="#onClickPorcentaje" text="\%">
+               <Button fx:id="porcentaje" minWidth="60.0" onAction="#onClickOperacion" text="\%">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -48,43 +86,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="dividir" minWidth="60.0" onAction="#onClickDividir" text="➗">
-                  <font>
-                     <Font size="25.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Button>
-            </children>
-         </HBox>
-         <HBox alignment="CENTER" minHeight="75.0" minWidth="200.0" spacing="20.0">
-            <children>
-               <Button fx:id="siete" minWidth="60.0" onAction="#onClickSiete" text="7">
-                  <font>
-                     <Font size="25.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Button>
-               <Button fx:id="ocho" minWidth="60.0" onAction="#onClickOcho" text="8">
-                  <font>
-                     <Font size="25.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Button>
-               <Button fx:id="nueve" minWidth="60.0" onAction="#onClickNueve" text="9">
-                  <font>
-                     <Font size="25.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Button>
-               <Button fx:id="multiplicar" minWidth="60.0" onAction="#onClickMultiplicar" text="✖">
+               <Button fx:id="dividir" minWidth="60.0" onAction="#onClickOperacion" text="➗">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -96,7 +98,7 @@
          </HBox>
          <HBox alignment="CENTER" minHeight="75.0" minWidth="200.0" spacing="20.0">
             <children>
-               <Button fx:id="cuatro" minWidth="60.0" onAction="#onClickCuatro" text="4">
+               <Button fx:id="siete" minWidth="60.0" onAction="#onClickNumero" text="7">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -104,7 +106,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="cinco" minWidth="60.0" onAction="#onClickCinco" text="5">
+               <Button fx:id="ocho" minWidth="60.0" onAction="#onClickNumero" text="8">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -112,7 +114,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="seis" minWidth="60.0" onAction="#onClickSeis" text="6">
+               <Button fx:id="nueve" minWidth="60.0" onAction="#onClickNumero" text="9">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -120,7 +122,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="sumar" minWidth="60.0" onAction="#onClickSumar" text="➕">
+               <Button fx:id="multiplicar" minWidth="60.0" onAction="#onClickOperacion" text="✖">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -132,7 +134,7 @@
          </HBox>
          <HBox alignment="CENTER" minHeight="75.0" minWidth="200.0" spacing="20.0">
             <children>
-               <Button fx:id="uno" minWidth="60.0" onAction="#onClickUno" text="1">
+               <Button fx:id="cuatro" minWidth="60.0" onAction="#onClickNumero" text="4">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -140,7 +142,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="dos" minWidth="60.0" onAction="#onClickDos" text="2">
+               <Button fx:id="cinco" minWidth="60.0" onAction="#onClickNumero" text="5">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -148,7 +150,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="tres" minWidth="60.0" onAction="#onClickTres" text="3">
+               <Button fx:id="seis" minWidth="60.0" onAction="#onClickNumero" text="6">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -156,7 +158,43 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="restar" minWidth="60.0" onAction="#onClickRestar" text="➖">
+               <Button fx:id="sumar" minWidth="60.0" onAction="#onClickOperacion" text="➕">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" minHeight="75.0" minWidth="200.0" spacing="20.0">
+            <children>
+               <Button fx:id="uno" minWidth="60.0" onAction="#onClickNumero" text="1">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="dos" minWidth="60.0" onAction="#onClickNumero" text="2">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="tres" minWidth="60.0" onAction="#onClickNumero" text="3">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="restar" minWidth="60.0" onAction="#onClickOperacion" text="➖">
                   <font>
                      <Font size="25.0" />
                   </font>
@@ -176,7 +214,7 @@
                      <Insets />
                   </HBox.margin>
                </Button>
-               <Button fx:id="cero" minWidth="60.0" onAction="#onClickCero" text="0">
+               <Button fx:id="cero" minWidth="60.0" onAction="#onClickNumero" text="0">
                   <font>
                      <Font size="25.0" />
                   </font>
